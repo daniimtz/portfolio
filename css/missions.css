@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Press Start 2P', monospace;
+  background: radial-gradient(circle at top, #306b87, #1b234c 80%);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* TEXTO SUPERIOR */
+.blink {
+  text-align: center;
+  margin: 40px 0 90px;
+  font-size: 2.5rem;
+  animation: blink 1.2s infinite;
+  text-shadow: #090a0f 5px 5px;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0.3; }
+}
+
+/* STEP (BLOQUEADO POR DEFECTO) */
+.step {
+  min-height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* STEP ACTIVO */
+.step.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* CONTENEDOR */
+.content {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  height: 360px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: justify-content 0.6s ease;
+}
+
+/* TARJETA */
+.card {
+  width: 480px;
+  height: 350px;
+  background: linear-gradient(145deg, #627895, #0a1422);
+  border: 3px solid #5fcfff;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(95, 207, 255, 0.4);
+  cursor: pointer;
+
+  opacity: 0;
+  transform: scale(0.9) translateX(0);
+
+  transition: transform 2.2s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-bottom: 4rem;
+}
+
+/* APARICIÓN CENTRADA */
+.step.active .card {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+}
+
+/* HOVER */
+.card:hover {
+  box-shadow: 0 0 35px rgba(95, 207, 255, 0.8);
+}
+
+/* DESCRIPCIÓN */
+.description {
+  position: absolute;
+  right: 0;
+  width: 420px;
+  padding: 24px;
+  background: linear-gradient(145deg, #0a1422, #1b2735);
+  border: 2px solid #d400ff;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(212, 0, 255, 0.4);
+
+  opacity: 0;
+  transform: translateX(80px);
+  pointer-events: none;
+
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+/* CUANDO SE ABRE */
+.content.open {
+  justify-content: flex-start;
+}
+
+.content.open .card {
+  transform: scale(0.8) translateX(-40px);
+}
+
+.content.open .description {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* TEXTOS */
+.place h2 {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.place img {
+  width: 60%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.description h3 {
+  font-size: 0.8rem;
+  margin-bottom: 16px;
+  color: #d400ff;
+}
+
+.description p {
+  font-size: 0.6rem;
+  line-height: 1.6;
+}
+
+/* BOTÓN NEXT */
+.next {
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+  color: #5fcfff;
+  cursor: pointer;
+  animation: bounce 1.2s infinite;
+  margin: 5rem 0 40px;
+}
+
+.next.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 4rem;
+  color: rgb(0, 191, 255);
+  text-decoration: none;
+
+  text-shadow: 0.25rem 0.25rem rgb(255, 255, 255);
+
+  margin: 6rem;
+  margin-right: 9rem;
+  animation: blink infinite 2s;
+  transition: transform 0.25s ease;
+}
+
+.menu-item:hover {
+  transform: scale(1.15);
+  cursor: crosshair;
+}
+
+/* =====================
+   FLECHA
+===================== */
+
+.arrow {
+  font-size: 1em; /* mismo tamaño que el texto */
+  opacity: 0;
+  transform: translateX(-0.6rem);
+  transition: all 0.25s ease;
+}
+
+.menu-item:hover .arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}

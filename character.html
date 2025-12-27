@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Character </title>
+    <link rel="stylesheet" href="/css/character.css">
+    <script src="/js/character.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1> - CHOOSE YOUR CHARACTER - </h1>
+    </header>
+
+    <main>
+        <section class="columns">
+
+        <div class="characters">
+            <img
+                class="character"
+                src="assets/images/unlocked.png"
+                data-large="assets/images/chosen.png"
+                data-desc="Técnico en Sistemas Microinformáticos y Redes | Apasionado por la tecnología, creativo
+                 y de aprendizaje rápido. Alegre y empático, con capacidad de trabajar en equipo."
+                data-name="Daniel Martínez"
+                alt="Dani">
+
+            <img
+                class="character locked"
+                src="assets/images/locked.png"
+                data-name="???"
+                alt="Locked">
+            <img
+                class="character locked"
+                src="assets/images/locked.png"
+                data-name="???"
+                alt="Locked">
+            <img
+                class="character locked"
+                src="assets/images/locked.png"
+                data-name="???"
+                alt="Locked">
+            <img
+                class="character locked"
+                src="assets/images/locked.png"
+                data-name="???"
+                alt="Locked">
+            <img
+                class="character locked"
+                src="assets/images/locked.png"
+                data-name="???"
+                alt="Locked">
+        </div>
+
+        <div class="chosen">
+            <img id="chosen-img" alt="Select a character">
+        </div>
+
+        <div class="description-text">
+        <h2 id="chosen-name">Description</h2>
+        <p class="description" id="chosen-desc">
+            Selecciona un personaje
+        </p>
+        <button id="choose-btn" disabled> NO DISPONIBLE </button>
+
+        </div>
+
+        </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="name"> DANIEL MARTÍNEZ RIESCO </p>
+    </footer>
+</body>
+</html>
