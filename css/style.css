@@ -1,13 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-/* =====================
-   BASE
-===================== */
-
 * {
   box-sizing: border-box;
 }
 
+/* Base */
 body {
   display: flex;
   flex-direction: column;
@@ -15,7 +12,6 @@ body {
   margin: 0;
   font-family: "Press Start 2P", system-ui;
   color: white;
-
   background: repeating-linear-gradient(
     135deg,
     #170f2a,
@@ -25,10 +21,7 @@ body {
   );
 }
 
-/* =====================
-   HEADER
-===================== */
-
+/* Header */
 header {
   text-align: center;
   padding: 1.5rem 1rem;
@@ -40,10 +33,7 @@ header {
   font-size: 0.8rem;
 }
 
-/* =====================
-   MAIN
-===================== */
-
+/* Main */
 main {
   flex: 1;
   display: flex;
@@ -54,10 +44,7 @@ main {
   padding: 1rem;
 }
 
-/* =====================
-   TITULO
-===================== */
-
+/* Título */
 h1 {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   color: rgb(234, 255, 0);
@@ -65,28 +52,21 @@ h1 {
   margin: 0;
 }
 
-/* =====================
-   MENU
-===================== */
-
+/* Menú */
 .menu {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Item del menú */
 .menu-item {
   display: flex;
   align-items: center;
   gap: 1rem;
-
   font-size: 2.5rem;
   color: white;
   text-decoration: none;
-
   text-shadow: 0.25rem 0.25rem black;
-
   margin: 1rem 0;
   margin-right: 4rem;
   transition: transform 0.25s ease;
@@ -97,12 +77,9 @@ h1 {
   cursor: crosshair;
 }
 
-/* =====================
-   FLECHA
-===================== */
-
+/* Flecha */
 .arrow {
-  font-size: 1em; /* mismo tamaño que el texto */
+  font-size: 1em;
   opacity: 0;
   transform: translateX(-0.6rem);
   transition: all 0.25s ease;
@@ -113,10 +90,7 @@ h1 {
   transform: translateX(0);
 }
 
-/* =====================
-   FOOTER
-===================== */
-
+/* Footer */
 footer {
   margin-top: auto;
   text-align: center;
@@ -125,26 +99,19 @@ footer {
   opacity: 0.8;
 }
 
-/* =====================
-   RESPONSIVE EXTRA
-===================== */
-
-/* =====================
-   SCROLL EN MOVIL
-===================== */
-
+/* Móvil */
 @media (max-width: 768px) {
-  html, body {
+  html,
+  body {
     height: auto;
     min-height: 100%;
-    overflow-y: auto; /* ✅ permite scroll */
+    overflow-y: auto;
     overflow-x: hidden;
   }
 
   main {
-    justify-content: flex-start; /* evita que se corte arriba */
+    justify-content: flex-start;
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
 }
-

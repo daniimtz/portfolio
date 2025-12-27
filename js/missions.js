@@ -1,29 +1,29 @@
 const steps = document.querySelectorAll('.step');
-const arrows = document.querySelectorAll('.next');
+const nextButtons = document.querySelectorAll('.next');
 
-let current = 0;
+let currentStep = 0;
 
-/* UNLOCK CON NEXT */
-arrows.forEach(arrow => {
-  arrow.addEventListener('click', () => {
-    arrow.classList.add('hidden');
-    current++;
+// Desbloquear pasos
+nextButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    button.classList.add('hidden');
+    currentStep++;
 
-    if (steps[current]) {
-      steps[current].classList.add('active');
-      steps[current].scrollIntoView({ behavior: 'smooth' });
+    if (steps[currentStep]) {
+      steps[currentStep].classList.add('active');
+      steps[currentStep].scrollIntoView({ behavior: 'smooth' });
     }
   });
 });
 
-/* CLICK EN TARJETA */
+// Abrir / cerrar tarjetas
 document.querySelectorAll('.card').forEach(card => {
   card.addEventListener('click', () => {
     const content = card.closest('.content');
 
-    // cerrar otros
-    document.querySelectorAll('.content.open').forEach(c => {
-      if (c !== content) c.classList.remove('open');
+    // Cerrar las demás
+    document.querySelectorAll('.content.open').forEach(opened => {
+      if (opened !== content) opened.classList.remove('open');
     });
 
     content.classList.toggle('open');

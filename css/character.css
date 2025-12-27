@@ -110,7 +110,7 @@ main {
 
 .character, .character locked{
   width: 100%;
-  max-width: 110px; /* 🔥 reducido para no desbordar */
+  max-width: 120px; 
   height: auto;
   border-radius: 10px;
 }
@@ -192,7 +192,7 @@ footer {
   html, body {
     height: auto;
     min-height: 100%;
-    overflow-y: auto; /* ✅ permite scroll */
+    overflow-y: auto;
     overflow-x: hidden;
   }
 
