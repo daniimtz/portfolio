@@ -10,34 +10,42 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden; /*eliminar scroll*/
+    background: repeating-linear-gradient(
+    135deg,
+    #170f2a,
+    #21163b 10px,
+    #1a132c 10px,
+    #1e1127 20px
+  );
 }
 
 body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-
-  background: radial-gradient(
-    circle,
-    #4c3d8e 0%,
-    #29286a 50%,
-    #071865 70%,
-    rgb(4, 1, 37) 100%
-  );
-
   color: white;
   font-family: "Press Start 2P", system-ui;
 }
 
+.icons {
+  font-family: 'Press Start 2P', monospace;
+  text-decoration: none;
+  color: #abc7ff8a;
+  font-size: 2rem;
+  position: relative;
+  margin-left: 1rem;
+  text-align: left;
+}
+
 header {
-  text-align: center;
   padding: 1.5vh 0;
   flex-shrink: 0;
 }
 
 header h1 {
+  text-align: center;
   font-size: clamp(1.4rem, 2.5vw, 2rem);
-  color: yellow;
+  color: rgb(0, 213, 255);
   text-shadow: 0.3rem 0.3rem black;
   margin: 0;
 }

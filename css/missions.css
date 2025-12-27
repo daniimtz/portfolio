@@ -6,12 +6,28 @@
   padding: 0;
 }
 
-body {
-  min-height: 100vh;
+  body {
+    min-height: 100vh;
+    font-family: 'Press Start 2P', monospace;
+    background: repeating-linear-gradient(
+    135deg,
+    #170f2a,
+    #21163b 10px,
+    #1a132c 10px,
+    #1e1127 20px
+  );
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  
+.icons {
   font-family: 'Press Start 2P', monospace;
-  background: radial-gradient(circle at top, #306b87, #1b234c 80%);
-  color: #fff;
-  overflow-x: hidden;
+  text-decoration: none;
+  color: #abc7ff8a;
+  font-size: 2rem;
+  position: relative;
+  margin-left: 1rem;
 }
 
 /* TEXTO SUPERIOR */
